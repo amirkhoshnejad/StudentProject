@@ -1,0 +1,4 @@
+Name:Amir
+Age:24
+StudentNumber:1234
+StudentCity:Maraghe

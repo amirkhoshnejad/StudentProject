@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace StudentProject
 {
@@ -6,7 +7,13 @@ namespace StudentProject
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string[] student=File.ReadAllLines(@"StudentProfile.txt");
+            var MyStudent=new StudentNames(){};
+            for(int i=0;i<student.Length;i++)
+            {
+                string[] autherList=student[i].Split(":");
+                Utility.SetProperty<StudentNames>(MyStudent,autherList[0],autherList[1]);
+            }
         }
     }
 }
